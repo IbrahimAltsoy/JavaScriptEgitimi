@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <style>
+        .brd{
+            border: 1px solid;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jquery Seçiciler</h1>
+    <p>jquery kütüphanesi ile javascript işlemlerini daha az kod ile çok işlem yapmamızı sağlayan javascript kütüphanesidir.</p>
+    <h2 id="baslik">Html Elementlerini id e göre seçme </h2>
+    <p id="mesaj" class="brd"></p>
+    <script>
+        // jquery de kodlar ve seçme işlemleri $ karakteri ile yapılır
+        $(document).ready(function (){
+            // bu metod ile döküman hazır olduğunda kıdların çalışmasını sağlar
+            var secilecekEleman = $("#baslik");
+            $("#mesaj").text("Başlıktan gelen içerek: "+secilecekEleman[0].innerText);
+
+        });
+    </script>
+
+    <hr>
+    <h2>Html elementleriini etiket adına göre seçme</h2>
+    <p id="etiket" class="brd"></p>
+    <script>
+        $(document).ready(function (){
+            var secilecekEleman = $("h2");
+            $("#etiket").text("Başlıktan gelen içerik : "+secilecekEleman[0].innerText);
+
+        });
+    </script>
+    <hr>
+    <h2 class="sinifSecici">Html elementlerini sınıf adına göre Seçme</h2>
+    <p id="sinif" class="brd"></p>
+    <script>
+        $(document).ready(function (){
+            var secilecekEleman = $(".brd");
+            $("#sinif").text("Başlıktan gelen içerik : "+secilecekEleman[1].innerText);
+
+        });
+    </script>
+    <hr>
+    <h2 class="sinifSecici">Html elementlerini CSS seçicilerine öre seçme</h2>
+    <p id="cssSecici" class="brd"></p>
+    <script>
+        $(document).ready(function (){
+            var secilecekEleman = $("p.brd");
+            $("#cssSecici").text("Başlıktan gelen içerik : "+secilecekEleman[1].innerText);
+
+        });
+    </script>
+
+</body>
+</html>

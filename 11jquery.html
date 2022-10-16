@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <h1>jquery ile html metin işlemleri</h1>
+    <h2>Metin içeriğini değiştirme</h2>
+    <p id="degistir">Merhaba</p>
+    <p id="jsileDegistir">Selam</p>
+    <script>
+        $(function () {
+            var secilecekelement = $ ("#degistir");
+            secilecekelement.text("degistir id li element jquery text metodu ile değiştir.");
+        });
+        // element içeriğini javascript ile değiştirme
+        var element = document.getElementById("jsileDegistir");
+        element.textContent = "Selam yazısı javascript ile değişti";
+
+
+</script>
+
+<hr>
+<h2>Metin içeriğini değiştirme</h2>
+<p id="jqileal">Merhaba Jquery</p>
+<p id="jsileal">Merhaba Javascript</p>
+<h3 id="jqmetin"></h3>
+<h3 id="jsmetin"></h3>
+<script>
+    var yazi=$("#jqileal").text();
+    $("#jqmetin").text(yazi);
+    var metin = document.getElementById("jsileal").textContent;
+    document.getElementById("jsmetin").textContent = metin;
+
+</script>
+<hr>
+<h2>html elementlerini içeriklerini html olarak ayarlama</h2>
+<div id="htmlicerik"></div>
+
+<script>
+    // $("#htmlicerik").text("<h4>juery ile html içerik ekleme</h4>"); // bunu metin olarak yazdırıyor
+     $("#htmlicerik").html("<h4>juery ile html içerik ekleme</h4>"); // html olark eklemesini sağlar
+    document.getElementById("htmlicerik").textContent += "<h4>juery ile html içerik ekleme</h4>";
+    document.getElementById("htmlicerik").innerText += "<h4>juery ile html içerik ekleme</h4>";
+    document.getElementById("htmlicerik").innerHTML += "<h4>juery ile html içerik ekleme</h4>";
+
+
+</script>
+<hr>
+<h2>Elementlerinini html içeriğini alma</h2>
+<div id="htmlicerikalma" style="border:1px solid ;"></div>
+<script>
+    // jquery ile html içerik alma
+    var icerik = $ ("#htmlicerikalma").html();
+    $("#htmlicerikalma").html(icerik);
+    var content = document.getElementById("htmlicerikalma").innerHTML;
+    document.getElementById("htmlicerikalma").innerHTML +=content;
+</script>
+
+</body>
+</html>

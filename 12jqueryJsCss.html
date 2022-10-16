@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .baslik{
+            color: red;
+            font-size: larger;
+
+        }
+        .sekil{
+            color: crimson;
+
+        }
+    </style>
+    
+</head>
+<body>
+    <script src="jquery-3.6.1.min.js"></script>
+    <h1>jquery ve javascript ile css işlemleri</h1>
+    <h3 id="jqilegizle">Bu element jquery ile gizlenecek</h3>
+    <h3 id="jsilegizle">Bu element javascript ile gizlenecek</h3>
+    
+
+
+    
+    <script>
+        $("#jqilegizle").hide(); // elementi gizler
+        document.getElementById("jsilegizle").style.display = "none"; // elementi javascript ile gizler 
+        
+
+        // elementleri göstermek için de 
+        $("#jqilegizle").show();
+        document.getElementById("jsilegizle").style.display = "block";
+       
+
+    </script>
+    <h2>Elementlerin Css lerini değiştirme</h2>
+    <div id="jqsekillendir">Elementlerin Css lerini değiştirme</div>
+    <div id="jssekillendir" class="jsclass">Elementlerin Css lerini değiştirme</div>
+    <style>
+        .jsclass{
+            background-color: blueviolet;
+        }
+    </style>
+    <script>
+        //jquery ile css işlemleri 
+        $("#jqsekillendir").css("font-size", "34px");
+        $("#jqsekillendir").css("padding", "2rem");
+        $("#jqsekillendir").css("margin", "18px");
+
+        // jssekillendir olark class ekleme
+        $("h2:first").addClass("baslik");
+        $("#jssekillendir").addClass("jsclass deneme");
+        // class silme 
+        $("#jssekillendir").removeClass("deneme");
+
+
+        // javascript ile java işlemleri 
+        document.getElementById("jssekillendir").style.color = "black";
+        document.getElementById("jssekillendir").style.padding = "1.5rem";
+        document.getElementById("jssekillendir").style.margin = "1.5rem";
+
+
+
+    </script>
+</body>
+</html>

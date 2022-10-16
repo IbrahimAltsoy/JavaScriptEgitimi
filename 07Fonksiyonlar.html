@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio,
+      incidunt. Molestiae, aspernatur illum. Perspiciatis beatae, nemo pariatur
+      autem commodi dolore!
+    </p>
+    <script>
+      // fonksiyon tanımlama
+      function FonksiyonAdi(parametre) {
+        console.log("fonksiyona gönderilen değer :>> ", parametre);
+      }
+      // fonksiyonu çağır
+      FonksiyonAdi("Javascrip ile fonksiyon çağırma");
+      FonksiyonAdi(50);
+      function ToplamaYap(sayi1, sayi2) {
+        console.log("sayiların toplamı :>> ", sayi1 + sayi2);
+      }
+
+      ToplamaYap(7, 5);
+      function RenkDegistir(arkaPlan, yaziRengi) {
+        document.bgColor = arkaPlan;
+        document.fgColor = yaziRengi;
+      }
+      RenkDegistir("red", "white");
+      var genislik = window.innerWidth;
+      var yukseklik = window.innerHeight;
+      document.write("<h3> Pencere genişliği " + genislik + "</h3>");
+      document.write("<h3> Pencere yüksekliği " + yukseklik + "</h3>");
+      if (genislik > 805) {
+        RenkDegistir("Black", "White");
+      } else {
+        RenkDegistir("red", "White");
+      }
+    </script>
+  </body>
+</html>

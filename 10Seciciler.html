@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Seçiciler</h1>
+    <p>
+      Javascript ile DOM(Document Object Model) üzerinden elementler üzerinde
+      hızlıca maniplasyon yapabilir. Bunun için document yani sayfa üzerindeki
+      istediğimiz elementi seçmemiz yeterlidir.
+    </p>
+    <p>
+      Javascript de sayfadaki elementlerin herhangi bir özelliği ile elementi
+      seçebiliriz. Id, name, class veya alt-üst ilişkili olduğu bir element
+      üzerinden.
+    </p>
+    <h2>Elementleri Id ye göre seçme olayı</h2>
+    <p id="merhaba">Merhaba--Merhaba</p>
+    <p id="jsIdSeciciTest" style="border: 1px solid"></p>
+    <script>
+      const icerik = document.getElementById("merhaba"); // id ye göre elementi seçtik
+      document.getElementById("jsIdSeciciTest").innerText =
+        "merhaba id li element içeriği: " + icerik.innerText;
+    </script>
+    <hr />
+    <h2>Html etiket adına göre(Tag name) göre seçme</h2>
+    <div>
+      div içeriği 
+    </div>
+    <div id="bosDiv" class="brd">Lorem ipsum dolor sit amet.Mesut Ilıca</div>
+    <script>
+      const divler=document.getElementsByTagName("div");
+      document.getElementById("bosDiv").innerText = "seçtiğimiz div elementinden gelen içerik " + divler[0].innerText;
+      // getElementsByTagName metodu kendi elementlerini seçer bütün divler bütün peler gibi ve elementler dizi formatında gelir ve bu diziden verdiğimiz indexe göre seçer ona göre bize getirir 
+    </script>
+    <hr>
+    <h2 class="sinifSecici">html elementlerini sınıf yapısına göre seçme</h2>
+    <p>sayfadaki elementleri sahip olduğu class adına göre seçme </p>
+    <div id="sinifSeciciId" class="brd"></div>
+
+    <script>
+      var sinifSecici=document.getElementsByClassName("sinifSecici"); // sınıfa göre seçmemizi sağlar
+      document.getElementById("sinifSeciciId").innerText = sinifSecici[0].innerText;
+
+    </script>
+    <hr>
+    <h2 class="sorguSecisi">HTML elementlerini CSS sorgusu kullanarak seçme </h2>
+    <p id="sorguSecisiId" class="brd"></p>
+    <style>
+      h2.sorguSecisi{
+        background-color: brown;
+        color: aliceblue;
+      }
+    </style>
+    <script>
+      var cssgoreSecme = document.querySelectorAll("h2.sorguSecisi");
+      document.getElementById("sorguSecisiId").innerHTML = cssgoreSecme[0].innerHTML;
+    </script>
+
+    <hr><hr>
+    <h2>Tek Eleman Seçimi</h2>
+    <p id="ilkelemanIcerigi"></p>
+    <script>
+      var ilkeleman = document.querySelector("p");
+      document.querySelector("#ilkelemanIcerigi").innerHTML = ilkeleman.innerHTML;
+    </script>
+
+    <hr>
+    <h2 id="olayBaslik">AddEventListener Metot Kullanımı</h2>
+    <p id="olayDinleme" class="brd"></p>
+    <p>Javascript de AddEventListener Metot Kullanımı AddEventListener Metot Kullanımı ile sayfayı dinleyebiliriz</p>
+    <button>addEventListener Sil</button>
+    <script>
+      function ornekFuction() {
+        document.getElementById("olayDinleme").innerHTML = "addventsListener çalıştı";
+        
+        
+      }
+      document.getElementById("olayBaslik").addEventListener("click", ornekFuction);
+      function removeHandler() {
+        document.getElementById("olayBaslik").removeEventListener("click", ornekFuction);
+        
+      }
+      
+
+    </script>
+  </body>
+</html>
